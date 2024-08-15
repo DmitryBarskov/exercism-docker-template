@@ -1,0 +1,41 @@
+services:
+  default: &default
+    build:
+      context: .
+      args: &default-args
+        UID: "$UID"
+        GID: "$GID"
+        TARGET_IMAGE: alpine
+    volumes_from:
+      - exercism-config
+    working_dir: /home/exercist/exercism
+
+  exercism-config:
+    image: alpine
+    volumes:
+      - $HOME/.config:/home/exercist/.config
+      - .:/home/exercist/exercism
+
+  elixir:
+    <<: *default
+    build:
+      args:
+        <<: *default-args
+        TARGET_IMAGE: "elixir:alpine"
+    working_dir: /home/exercist/exercism/elixir
+
+  java:
+    <<: *default
+    build:
+      args:
+        <<: *default-args
+        TARGET_IMAGE: gradle:jdk21-alpine
+    working_dir: /home/exercist/exercism/java
+
+  ruby:
+    <<: *default
+    build:
+      args:
+        <<: *default-args
+        TARGET_IMAGE: "ruby:alpine"
+    working_dir: /home/exercist/exercism/ruby
