@@ -7,7 +7,7 @@ exercises on exercism.
 
 You must have docker installed and running.
 
-1. Run `bin/configure <YOUR_TOKEN>` (you can get your token in [1](settings))
+1. Run `bin/configure <YOUR_TOKEN>` (you can get your token in [settings][1])
 2. Download your exercise, e.g. `bin/exercism download --track=java --exercise=hello-world`
 3. Solve the exercise in the downloaded folder, e.g. in `java/hello-world`.
 4. Run tests `bin/test java/hello-world`
