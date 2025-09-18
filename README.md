@@ -1,6 +1,6 @@
 # Exercism repository template
 
-The idea is to automate installation of everything required for the solving
+Automate installation of everything required for the solving
 exercises on exercism.
 
 ## How to start
@@ -9,7 +9,7 @@ exercises on exercism.
 
 Docker is the only required installation.
 
-0. Fork this repository ❤️
+0. Use this repository as a template, fork it or clone it ❤️
 1. Run `bin/configure <YOUR_TOKEN>` (you can get your token in [settings][1])
 2. Download your exercise, e.g. `bin/exercism download --track=java --exercise=hello-world`
 3. Solve the exercise in the downloaded folder, e.g. in `java/hello-world`.
@@ -18,7 +18,7 @@ Docker is the only required installation.
 
 ### DevContainers (vscode, intellij idea, codespaces, gitpod, dev container cli)
 
-0. Fork this repository ⭐️
+0. Use this repository as a template, fork it or clone it ⭐️
 1. Open track directory in a supported tool
 2. Follow the workflow of your tool of choice. E. g. vscode suggest to reopen \
     the track in a container
