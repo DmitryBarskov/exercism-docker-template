@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
+if [ ! -f .env ]; then
+  echo "UID=$(id -u)" >> .env
+  echo "GID=$(id -g)" >> .env
+fi
+
 docker compose run -it --rm default exercism $@
