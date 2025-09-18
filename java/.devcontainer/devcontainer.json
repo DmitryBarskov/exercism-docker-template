@@ -1,0 +1,14 @@
+{
+    "name": "Java",
+    "build": { "dockerfile": "Dockerfile" },
+
+    "features": {
+        "ghcr.io/devcontainers-extra/features/exercism-cli:1": {}
+    },
+
+    "postCreateCommand": "exercism configure -w ..",
+
+    "mounts": [
+        "source=${localEnv:HOME}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
+    ]
+}
