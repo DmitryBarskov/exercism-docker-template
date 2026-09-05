@@ -14,22 +14,11 @@ RUN wget -O exercism.tar.gz \
 RUN tar -xf exercism.tar.gz
 
 FROM $TARGET_IMAGE
-ARG TARGET_IMAGE
-ARG UID
-ARG GID
 
 COPY --from=build /root/exercism /bin/exercism
 
-# Use instructions below for alpine based images
-RUN addgroup --gid $GID --system exercist || \
-  adduser --system --uid $UID -G "$(getent group $GID | cut -d: -f1)" exercist
+RUN mkdir -p /home/exercist/.config/exercism && \
+  touch /home/exercist/.config/exercism/user.json && \
+  chmod -R 1777 /home/exercist
 
-# Use instruction below for debian based images
-# RUN groupadd -g $GID exercist && \
-#  useradd -m -r -o -u $UID -g exercist exercist
-
-USER exercist
 WORKDIR /home/exercist
-
-RUN mkdir -p /home/exercist/.config/exercism
-RUN touch /home/exercist/.config/exercism/user.json

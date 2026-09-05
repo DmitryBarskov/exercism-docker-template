@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [ ! -f .env ]; then
-  echo "UID=$(id -u)" >> .env
-  echo "GID=$(id -g)" >> .env
+  echo "DOCKER_UID=$(id -u)" >> .env
+  echo "DOCKER_GID=$(id -g)" >> .env
 fi
 
 docker compose run -it --rm default exercism download $@
